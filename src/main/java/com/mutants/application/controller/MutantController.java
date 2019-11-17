@@ -25,7 +25,7 @@ public class MutantController{
                     new ResponseEntity<>(true, HttpStatus.OK):
                     new ResponseEntity<>(false, HttpStatus.FORBIDDEN) ;
         }catch(Exception e){
-            log.error("General Error. ");
+            log.error("General Error. ", e.getMessage());
             return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

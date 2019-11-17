@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "cbf67b20-208f-46b9-812e-5d9605d22664",
+		"name": "Mutants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mutant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dna\": [\n        \"ATGCGA\",\n        \"CAGTGC\",\n        \"TTATGT\",\n        \"AGAAGG\",\n        \"CCCCTA\",\n        \"TCACTG\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/mutant",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/stats",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutans aws",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dna\": [\n        \"ATGCGA\",\n        \"CAGTGC\",\n        \"TTATGT\",\n        \"AGAAGG\",\n        \"CCCCTA\",\n        \"TCACTG\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "Mutants-env.hrbphmjpmy.us-west-1.elasticbeanstalk.com/mutant",
+					"host": [
+						"Mutants-env",
+						"hrbphmjpmy",
+						"us-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stats aws",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "Mutants-env.hrbphmjpmy.us-west-1.elasticbeanstalk.com/stats",
+					"host": [
+						"Mutants-env",
+						"hrbphmjpmy",
+						"us-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -11,26 +11,47 @@ cloud.aws:
     useDefaultAwsCredentialsChain: true
   sqsname: mutants-sqs
   end-point:
-    uri: https://sqs.us-west-1.amazonaws.com/374609988338/mutants-sqsalenions
+    uri: https://sqs.us-west-1.amazonaws.com/374609988338/mutants-sqsALENIONS
   stack:
     auto: false
+  cloudwatch:
+    namespace: mutantapp
+    batchSize: 20
 
 spring.datasource:
   platform: postgres
   driverClassName: org.postgresql.Driver
-  url: jdbc:postgresql://localhost:5432/mutantdb
-  username: postgres
-  password: passwordmutantdb
-spring.tomcat:
-  removeAbandoned: true
-  removeAbandonedTimeout: 120
-  logAbandoned: true
-  maxActive: 50
-  maxIdle: 5
-  maxWait: 1000
-  validationQuery: "select 1"
-  testOnBorrow: true
-  testOnConnect: true
-  testWhileIdle: true
+  url: jdbc:postgresql://mutant-cluster-instance.cgv1oht8cpbb.us-west-1.rds.amazonaws.com:5432/mutantdbALENIONS
+  username: mutantdb
+  password: passworddb
+  tomcat:
+    max-wait: 20000
+    max-active: 50
+    max-idle: 20
+    min-idle: 15
+    initial-size: 15
+
+log4j:
+  appender:
+    cloudwatch: com.kdgregory.log4j.aws.CloudWatchAppender
+    cloudwatch.layout: org.apache.log4j.PatternLayout
+    cloudwatch.layout.ConversionPattern: '%d{ISO8601} %-5p [%t] %c - %m%n'
+    cloudwatch.logGroup: AppenderExample
+    cloudwatch.logStream: Example-{date}-{hostname}-{pid}
+    console: org.apache.log4j.ConsoleAppender
+    console.layout: org.apache.log4j.PatternLayout
+    console.layout.ConversionPattern: '%d{ISO8601} %-5p [%t] %c - %m%n'
+    kinesis: com.kdgregory.log4j.aws.KinesisAppender
+    kinesis.layout: com.kdgregory.log4j.aws.JsonLayout
+    kinesis.layout.enableHostname: true
+    kinesis.layout.enableInstanceId: false
+    kinesis.layout.enableLocation: true
+    kinesis.streamName: AppenderExample
+    sns: com.kdgregory.log4j.aws.SNSAppender
+    sns.layout: org.apache.log4j.PatternLayout
+  logger:
+    com:
+      kdgregory: DEBUG
+  rootLogger: WARN, console
 
 mutantdna: ATGCGA, CAGTGC, TTATGT, AGAAGG, CCCCTA, TCACTG

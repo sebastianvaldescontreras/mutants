@@ -30,7 +30,7 @@ public class SubjectRepository implements ISubjectRepository {
     }
 
     @Override
-    public long countMutant() {
+    public long countMutant(){
         String sql = "select count(*) from subject where mutant = true";
         long select = 0;
         try{

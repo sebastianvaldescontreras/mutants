@@ -17,6 +17,8 @@ en caso de hacer muchas peticiones por segundo, como es el caso)
 - Aws Simple Queue Service con Cola estandar y configuracion rapida llamada mutants-sqs.
 - Amazon RDS con base de datos Aurora DB.
 - Elastic Beanstalk con apache tomcat, para desplegar un war generado con gradle bootWar.
+- Para entorno local Postgress (pgAdmin).
+- Postman para realizar las llamadas y se encuentra en el proyecto el usado.
 
 ### Installing
 

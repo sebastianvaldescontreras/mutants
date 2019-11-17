@@ -87,7 +87,7 @@ public class MutantService implements IMutantService{
         if(countHuman == 0){
             ratio = 1.0;
         }else if(countMutant > 0){
-            ratio = (100 * (countMutant + countHuman) / countHuman) * 0.01;
+            ratio = (countMutant * 100 / (countHuman + countMutant)) * 0.01;
         }else{
             ratio = 0.0;
         }

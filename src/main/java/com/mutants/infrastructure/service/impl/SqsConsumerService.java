@@ -19,7 +19,7 @@ public class SqsConsumerService{
     @Autowired
     ISubjectRepository subjectRepository;
 
-    //@SqsListener(value = "${cloud.aws.end-point.uri}", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
+    @SqsListener(value = "${cloud.aws.end-point.uri}", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
     public void getValueSQS(String notification) {
         MutationEvaluationDto mutationEvaluationDto = Json.setObject(MutationEvaluationDto.class, notification);
         Subject subject = new Subject();
@@ -27,6 +27,5 @@ public class SqsConsumerService{
         subject.setCreationdate(LocalDateTime.now());
         subject.setDna(String.join(",", mutationEvaluationDto.getDna()));
         subjectRepository.postSubject(subject);
-        log.info(notification);
     }
 }
