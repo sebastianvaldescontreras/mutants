@@ -22,11 +22,11 @@ public class MutantController{
     public ResponseEntity<?> isMutant(@RequestBody SubjectDto subjectDto){
         try{
             return mutantService.isMutant(subjectDto.getDna())?
-                    new ResponseEntity<>(true, HttpStatus.OK):
-                    new ResponseEntity<>(false, HttpStatus.FORBIDDEN) ;
+                    new ResponseEntity<>(HttpStatus.OK):
+                    new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }catch(Exception e){
             log.error("General Error. ", e.getMessage());
-            return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

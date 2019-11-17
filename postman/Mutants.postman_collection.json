@@ -6,15 +6,15 @@
 	},
 	"item": [
 		{
-			"name": "mutant",
+			"name": "mutant local",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -35,7 +35,7 @@
 			"response": []
 		},
 		{
-			"name": "stats",
+			"name": "stats local",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -53,15 +53,15 @@
 			"response": []
 		},
 		{
-			"name": "mutans aws",
+			"name": "mutans aws beanstalk",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -74,7 +74,8 @@
 					}
 				},
 				"url": {
-					"raw": "Mutants-env.hrbphmjpmy.us-west-1.elasticbeanstalk.com/mutant",
+					"raw": "http://Mutants-env.hrbphmjpmy.us-west-1.elasticbeanstalk.com/mutant",
+					"protocol": "http",
 					"host": [
 						"Mutants-env",
 						"hrbphmjpmy",
@@ -90,14 +91,15 @@
 			"response": []
 		},
 		{
-			"name": "stats aws",
+			"name": "stats aws beanstalk",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "Mutants-env.hrbphmjpmy.us-west-1.elasticbeanstalk.com/stats",
+					"raw": "http://mutants-env.hrbphmjpmy.us-west-1.elasticbeanstalk.com/stats",
+					"protocol": "http",
 					"host": [
-						"Mutants-env",
+						"mutants-env",
 						"hrbphmjpmy",
 						"us-west-1",
 						"elasticbeanstalk",
@@ -105,6 +107,68 @@
 					],
 					"path": [
 						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stats aws apigateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://q19jwncle7.execute-api.us-west-1.amazonaws.com/mercadolibre/stats",
+					"protocol": "https",
+					"host": [
+						"q19jwncle7",
+						"execute-api",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"mercadolibre",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutant aws apigateway",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dna\": [\n        \"ATGCGA\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://q19jwncle7.execute-api.us-west-1.amazonaws.com/mercadolibre/mutant",
+					"protocol": "https",
+					"host": [
+						"q19jwncle7",
+						"execute-api",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"mercadolibre",
+						"mutant"
 					]
 				}
 			},

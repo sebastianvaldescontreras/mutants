@@ -31,7 +31,7 @@ public class MutantService implements IMutantService{
         MutantGenDto mutantGenDto = new MutantGenDto();
         mutantGenDto.setDnaHorizontal(mutantdna);
         mutantGenDto.setDnaVertical(ArrayUtil.orderVerticalArray(mutantdna));
-        mutantGenDto.setDnaDiagonal(ArrayUtil.orderDiagonalArray(new String[] {}));
+        mutantGenDto.setDnaDiagonal(ArrayUtil.orderDiagonalArray(mutantdna));
         return mutantGenDto;
     }
 
@@ -104,7 +104,7 @@ public class MutantService implements IMutantService{
         int countFound = 0;
         try{
             for(String nitrogenousMutant: mutantGenDto.getDnaHorizontal()){
-                if(nitrogenousMutant.contains(nitrogenousSubject.substring(valueHorizontal,valueHorizontal+4))){
+                if(nitrogenousMutant.contains(nitrogenousSubject.substring(0,4))){
                     countFound++;
                     break;
                 }else{
@@ -123,7 +123,7 @@ public class MutantService implements IMutantService{
         int countFound = 0;
         try{
             for(String nitrogenousMutant: mutantGenDto.getDnaVertical()){
-                if(nitrogenousMutant.contains(nitrogenousSubject.substring(valueVertical,valueVertical+4))){
+                if(nitrogenousMutant.contains(nitrogenousSubject.substring(0,4))){
                     countFound++;
                     break;
                 }else{
@@ -142,7 +142,7 @@ public class MutantService implements IMutantService{
         int countFound = 0;
         try{
             for(String nitrogenousMutant: mutantGenDto.getDnaDiagonal()){
-                if(nitrogenousMutant.contains(nitrogenousSubject.substring(valueDiagonal,valueDiagonal+4))){
+                if(nitrogenousMutant.contains(nitrogenousSubject.substring(0,4))){
                     countFound++;
                     break;
                 }else{
