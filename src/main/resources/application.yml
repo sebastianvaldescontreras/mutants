@@ -6,12 +6,12 @@ cloud.aws:
     static: us-west-1
     auto: false
   credentials:
-    access-key: AKIAIPH4XHDXMO3L5FKA
-    secret-key: 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
+    access-key: AKIAIPH4XHDXMO3L5FKAALENIONS
+    secret-key: etVByDzroJDBYUdvMAbDkD+2YoMKIP6bElcyI36WALENIONS
     useDefaultAwsCredentialsChain: true
   sqsname: mutants-sqs
   end-point:
-    uri: https://sqs.us-west-1.amazonaws.com/374609988338/mutants-sqs
+    uri: https://sqs.us-west-1.amazonaws.com/374609988338/mutants-sqsALENIONS
   stack:
     auto: false
   cloudwatch:
@@ -21,7 +21,7 @@ cloud.aws:
 spring.datasource:
   platform: postgres
   driverClassName: org.postgresql.Driver
-  url: jdbc:postgresql://mutant-cluster-instance.cgv1oht8cpbb.us-west-1.rds.amazonaws.com:5432/mutantdb
+  url: jdbc:postgresql://mutant-cluster-instance.cgv1oht8cpbb.us-west-1.rds.amazonaws.com:5432/mutantdbALENIONS
   username: mutantdb
   password: passworddb
   tomcat:
