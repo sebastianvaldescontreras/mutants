@@ -20,17 +20,22 @@ en caso de hacer muchas peticiones por segundo, como es el caso)
 - Para entorno local Postgress (pgAdmin).
 - Postman para realizar las llamadas y se encuentra en el proyecto el usado.
 
+
 ### Installing
 
 Descargar el proyecto.
 Si haz programado en java con springboot no deberia escribir tanto pero puedes consultarme al correo: 
 sebastian.valdes.contreras@gmail.com
 Configurar todos los datos en application.yml.
+En este archivo se encuentran mis credenciales para acceder a los servicios de aws. Cambiar el nombre
+agregado a "alenions" a todos las url y credenciales. Despues de 4 dias de leido esto, eliminare
+todo. (sqs, base de datos, accesskey y secretkey de aws).
 
 ## Running the tests
 
 Los Test unitarios se corren de forma local, dando click derecho en los test y pinchar "Run Test...",
-elijes tu si quieres ver la covertura, hasta el momento que escribi esto, ni he revisado cuanto tiene.
+elijes tu si quieres ver la covertura, hasta el momento que escribi esto, ni he revisado cuanto tiene y 
+creo que no avance en esto.
 
 ## Authors
 

@@ -6,12 +6,12 @@ cloud.aws:
     static: us-west-1
     auto: false
   credentials:
-    access-key: AKIAIPH4XHDXMO3L5FKAALENIONS
-    secret-key: etVByDzroJDBYUdvMAbDkD+2YoMKIP6bElcyI36WALENIONS
+    access-key: AKIAIPH4XHDXMO3L5FKA"alenions"
+    secret-key: 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"alenions"
     useDefaultAwsCredentialsChain: true
   sqsname: mutants-sqs
   end-point:
-    uri: https://sqs.us-west-1.amazonaws.com/374609988338/mutants-sqsALENIONS
+    uri: https://sqs.us-west-1.amazonaws.com/374609988338/mutants-sqs"alenions"
   stack:
     auto: false
   cloudwatch:
@@ -21,9 +21,9 @@ cloud.aws:
 spring.datasource:
   platform: postgres
   driverClassName: org.postgresql.Driver
-  url: jdbc:postgresql://mutant-cluster-instance.cgv1oht8cpbb.us-west-1.rds.amazonaws.com:5432/mutantdbALENIONS
-  username: mutantdb
-  password: passworddb
+  url: jdbc:postgresql://mutant-cluster-instance.cgv1oht8cpbb.us-west-1.rds.amazonaws.com:5432/mutantdb"alenions"
+  username: mutantdb"alenions"
+  password: passworddb"alenions"
   tomcat:
     max-wait: 20000
     max-active: 50
